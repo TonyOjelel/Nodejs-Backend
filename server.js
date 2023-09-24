@@ -11,7 +11,7 @@ const dotenv = require('dotenv');
 dotenv.config();
 
 // App setup
-const app express();
+const app = express();
 app.use(cors());
 app.use(bodyParser.json());
 app.use(session({ secret: 'secretkey', resave: true, saveUninitialized: true }));
@@ -25,7 +25,7 @@ mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true, useUnifiedTop
 
 // Model
 const User = mongoose.model('User', new mongoose.Schema({
-  username String,
+  username: String,
   password: String
 }));
 
